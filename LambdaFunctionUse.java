@@ -3,7 +3,7 @@ package com.java.StandardPrograms;
 import java.util.ArrayList;
 import java.util.List;
 
-//Program to use Lambda Expressions
+//Program to use Lambda Expression
 interface Addable{
 	int add(int a,int b);  
 }
