@@ -26,7 +26,7 @@ public class LambdaFunctionUse {
              list.add("jai");  
                
              list.forEach(  
-                 (n)->System.out.println(n)  
+                 (n)->System.out.println(n) 
              );  
 
 	}
