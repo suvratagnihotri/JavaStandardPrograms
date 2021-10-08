@@ -2,6 +2,7 @@ package com.java.StandardPrograms;
 
 import java.util.Objects;
 
+//Class to override equals() and hashCode() functions of Object class.
 public class Player {
 	private String name;
 	private int age;
