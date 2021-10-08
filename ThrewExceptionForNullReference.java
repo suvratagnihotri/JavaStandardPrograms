@@ -2,7 +2,7 @@ package com.java.StandardPrograms;
 
 import java.util.Objects;
 
-//Program to throw NullPointerException for null values.
+//Program to throw NullPointerException for null values
 public class ThrewExceptionForNullReference {
 
 	public static void main(String[] args) {
