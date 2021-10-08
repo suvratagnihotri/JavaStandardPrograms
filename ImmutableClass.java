@@ -1,7 +1,7 @@
 package com.java.StandardPrograms;
 
-//Program to create a immutable class
-public class ImmutableClass {
+//Program to create a immutable class.
+public final class ImmutableClass {
 	private int age ;
 	private String name ;
 	public ImmutableClass(int age, String name) {
