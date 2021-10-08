@@ -6,10 +6,10 @@ import java.util.Objects;
 public class ThrewExceptionForNullReference {
 
 	public static void main(String[] args) {
-		String name = "Honda";
+		String name = "Rohan";
 		String color = "Black";
 		Car car = new Car(null , color);
-		car.assignDriver("Rohan", "India");
+		car.assignDriver(name, "India");
 	}
 
 }
