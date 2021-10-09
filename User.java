@@ -21,6 +21,7 @@ public class User {
 	private final String firstName;
 	private final String lastName;
 	
+	//Constructor of User Class , Passing userBuilder class as a parameter.
 	private User(UserBuilder builder ) {
 		this.nickName = builder.nickName;
 		this.password = builder.password;
@@ -30,10 +31,12 @@ public class User {
 		this.lastName = builder.lastName;
 	}
 	
+	//getBuilder() method with return type of UserBuilder class, creating new Object of User class with userBuilder class.
 	public static UserBuilder getBuilder(String nickName, String password) {
 		return new User.UserBuilder(nickName, password);	
 	}
 	
+	//UserBuilder class
 	public static final class UserBuilder{
 		private final String nickName;
 		private final String password;
