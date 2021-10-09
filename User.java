@@ -4,7 +4,9 @@ import java.util.Date;
 /**
  * In this Program I am Writing an immutable class via the Builder
  * pattern.
- * 
+ * Builder Pattern - Builder Pattern is used to create a class in which we have required fields and 
+ * optional fields.
+ * Without builder Pattern we have to create multiple Constructors for the same class, with different parameters.
  * @author Suvrat Agnihotri
  *
  */
