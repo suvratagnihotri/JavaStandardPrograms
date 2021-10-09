@@ -45,24 +45,29 @@ public class User {
 		private String firstName;
 		private String lastName;
 		
+		//Constructor of the UserBuilder class with required fields as parameters.
 		public UserBuilder(String nickName, String password) {
 			this.nickName = nickName;
 			this.password = password;
 			this.created = new Date();
 			}
-		
+		//Method to set optional field firstName 
 		public UserBuilder firstName(String firstName) {
 			this.firstName = firstName;
 			return this;
 		}
+		//Method to set optional field lastName
 		public UserBuilder lastName(String lastName) {
 			this.lastName = lastName;
 			return this;
 		}
+		
+		//Method to set optional field email
 		public UserBuilder email(String email) {
 			this.email = email;
 			return this;
 		}
+		//Build method to create the new Object of User class
 		public User build() {
 			return new User(this);
 		}
@@ -104,6 +109,7 @@ public class User {
 			System.out.println(user3);
 		}
 		
+		//Overriding toString() 
 		@Override 
 		public String toString() {
 			StringBuffer str = new StringBuffer();
