@@ -18,8 +18,24 @@ public class StringControl {
         return reverseString;
     }
 
+    public String getLongestPalindromeSubString(String string){
+        for(int i = 0; i<string.length(); i++){
+            String subString = string.substring(i, string.length());
+            String reverseSubString = "";
+            for(int j = string.length()-1; j>=i; j--){
+                reverseSubString = reverseSubString + string.charAt(j);
+            }
+
+            if(reverseSubString.equals(subString)){
+                return subString;
+            }
+        }
+        System.out.println(string);
+        return String.valueOf(string.charAt(0));
+    }
+
     public static void main(String[] args) {
-        String givenString = "i.like.this.program.very.much";
-        System.out.println(new StringControl().reverseString(givenString));
+        String givenString = "abc";
+        System.out.println(new StringControl().getLongestPalindromeSubString(givenString));
     }
 }
