@@ -34,8 +34,24 @@ public class StringControl {
         return String.valueOf(string.charAt(0));
     }
 
+    public String recursivelyRemoveDuplicateCharacters(String givenString){
+        System.out.println("Givn string is :"+ givenString);
+        String newString = givenString;
+        for(int i = 0; i<givenString.length()-1; i++){
+            if(givenString.charAt(i)==givenString.charAt(i+1)){
+                newString = givenString.replaceFirst(String.valueOf(givenString.charAt(i)), "");
+                newString = newString.replaceFirst(String.valueOf(givenString.charAt(i+1)), "");
+                System.out.println(newString);
+                recursivelyRemoveDuplicateCharacters(newString);
+                break;
+            }
+        }
+        return newString;
+    }
+
     public static void main(String[] args) {
-        String givenString = "abc";
-        System.out.println(new StringControl().getLongestPalindromeSubString(givenString));
+        String givenString = "geeksforgeek";
+        String result = new StringControl().recursivelyRemoveDuplicateCharacters(givenString);
+        System.out.println("Result is :"+ result);
     }
 }
