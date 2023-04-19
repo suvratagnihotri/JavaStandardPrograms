@@ -18,6 +18,11 @@ public class StringControl {
         return reverseString;
     }
 
+
+
+//Given two strings a and b. The task is to find 
+// if the string 'b' can be obtained by rotating another 
+// string 'a' by exactly 2 places.
     public String getLongestPalindromeSubString(String string){
         for(int i = 0; i<string.length(); i++){
             String subString = string.substring(i, string.length());
@@ -49,9 +54,33 @@ public class StringControl {
         return newString;
     }
 
+    public boolean isRotated(String string1, String string2){
+        if(string1.length()!=string2.length()){
+            return false;
+        }
+        if(string1.length()<1){
+            return string1.equals(string2);
+        }
+
+        int length = string2.length();
+
+        String antiClockWiseRotation = "";
+        String clockWiseRotation = "";
+
+        antiClockWiseRotation = antiClockWiseRotation + 
+                                string2.substring(length-2, length) +
+                                string2.substring(0,length-2);
+
+        clockWiseRotation = clockWiseRotation +
+                            string2.substring(2) +
+                            string2.substring(0,2);
+
+        return (clockWiseRotation.equals(string1) || antiClockWiseRotation.equals(string1));
+    }
+
     public static void main(String[] args) {
-        String givenString = "geeksforgeek";
-        String result = new StringControl().recursivelyRemoveDuplicateCharacters(givenString);
-        System.out.println("Result is :"+ result);
+        String string1 = "geeksforgeeks";
+        String string2 = "geeksgeeksfor";
+        System.out.println(new StringControl().isRotated(string1, string2));
     }
 }
