@@ -78,6 +78,30 @@ public class StringControl {
         return (clockWiseRotation.equals(string1) || antiClockWiseRotation.equals(string1));
     }
 
+    public Double romanNumberToIntegers(String romanNumbers){
+        for(int i = romanNumbers.length()-1; i<=0; i--){
+            Double number = (double) 0;
+            switch (romanNumbers.charAt(i)) {
+                case 'I':
+                    number = number + (double) 1;
+                    break;
+                case 'V':
+                    break;
+                case 'X':
+                    break;
+                case 'L':
+                    break;
+                case 'C':
+                    break;
+                case 'D':
+                    break;
+                case 'M':
+                    break;
+            }
+        }
+        return null;
+    }
+
     public static void main(String[] args) {
         String string1 = "geeksforgeeks";
         String string2 = "geeksgeeksfor";
