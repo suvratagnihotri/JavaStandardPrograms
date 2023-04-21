@@ -23,40 +23,30 @@ public class RomanToInteger {
     }
     int romanToDecimal(String str)
     {
-        // Initialize result
-        int res = 0;
- 
-        for (int i = 0; i < str.length(); i++) {
-            // Getting value of symbol s[i]
-            int s1 = value(str.charAt(i));
- 
-            // Getting value of symbol s[i+1]
-            if (i + 1 < str.length()) {
-                int s2 = value(str.charAt(i + 1));
- 
-                // Comparing both values
-                if (s1 >= s2) {
-                    // Value of current symbol
-                    // is greater or equalto
-                    // the next symbol
-                    res = res + s1;
+        int result = 0;
+        for(int i =0; i<str.length(); i++){
+            int char1 = value(str.charAt(i));
+
+            if(i+1<str.length()){
+                int char2 = value(str.charAt(i+1));
+
+                if(char1>=char2){
+                    result = result+char1;
                 }
-                else {
-                    // Value of current symbol is
-                    // less than the next symbol
-                    res = res + s2 - s1;
+
+                else{
+                    result = result + char2-char1;
                     i++;
                 }
             }
-            else {
-                res = res + s1;
+            else{
+                result = result + char1;
             }
         }
- 
-        return res;
+        return result;
     }
 
     public static void main(String[] args) {
-        System.out.println(new RomanToInteger().romanToDecimal("XXX"));
+        System.out.println(new RomanToInteger().romanToDecimal("IX"));
     }
 }
