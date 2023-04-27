@@ -1,5 +1,8 @@
 package com.java.StandardPrograms;
 
+import java.util.Arrays;
+import java.util.Comparator;
+
 public class StringControl {
     
     public String reverseString(String givenString ){
@@ -102,9 +105,30 @@ public class StringControl {
         return null;
     }
 
+    public String longestCommonPrefix(String [] stringArray){
+        Arrays.sort(stringArray,Comparator.comparingInt(String::length));
+        String smallestString = stringArray[0];
+        String subString = "-1";
+        
+        for(int i=0; i<smallestString.length(); i++){
+            subString = smallestString.substring(0,i);
+            for (String string : stringArray) {
+                if(!string.contains(subString)){
+                    if(i==0){
+                        return "-1";
+                    }
+                    else{
+                        return subString;
+                    }
+                }
+            }
+        }
+        return subString;
+    }
+
     public static void main(String[] args) {
-        String string1 = "geeksforgeeks";
-        String string2 = "geeksgeeksfor";
-        System.out.println(new StringControl().isRotated(string1, string2));
+        String[] stringArray = {"geeksforgeeks", "geeks", "geek",
+            "geezer"};
+        System.out.println(new StringControl().longestCommonPrefix(stringArray));
     }
 }
