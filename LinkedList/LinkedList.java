@@ -1,5 +1,7 @@
 package com.java.StandardPrograms.LinkedList;
 
+import java.util.ArrayList;
+
 public class LinkedList {
     Node head;
 
@@ -65,6 +67,14 @@ public class LinkedList {
         list = list.insertData(list, 8); 
     
         // Print the LinkedList 
-        printList(list); 
+        printList(list);
+        ArrayList <Integer> arrayList = new ArrayList<>();
+
+        while(list.head !=null){
+            arrayList.add(list.head.data);
+            list.head = list.head.next;
+        }
+
+        System.out.println("Middle element is :"+ arrayList.get(arrayList.size()/2));
     }
 }
