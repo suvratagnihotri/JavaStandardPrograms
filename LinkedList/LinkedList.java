@@ -49,6 +49,40 @@ public class LinkedList {
         } 
     }
 
+    public int middleElementOfList(LinkedList list){
+        if(list.head==null){
+            return 0;
+        }
+        else{
+            ArrayList <Integer> arrayList = new ArrayList<>();
+
+            while(list.head !=null){
+                arrayList.add(list.head.data);
+                list.head = list.head.next;
+            }
+            return arrayList.get(arrayList.size()/2);
+        }
+    }
+
+    public LinkedList reverseLinkedList(LinkedList list){
+        LinkedList newList = new LinkedList();
+
+        if(list.head == null){
+            return null;
+        }
+        else{
+            ArrayList<Integer> arrayList = new ArrayList<>();
+            while(list.head!=null){
+                arrayList.add(list.head.data);
+                list.head = list.head.next;
+            }
+            for(int i = arrayList.size()-1; i>=0; i--){
+                newList = newList.insertData(newList, arrayList.get(i));
+            }
+        }
+        return newList;
+    }
+
     public static void main(String[] args) {
         LinkedList list = new LinkedList(); 
     
@@ -68,13 +102,10 @@ public class LinkedList {
     
         // Print the LinkedList 
         printList(list);
-        ArrayList <Integer> arrayList = new ArrayList<>();
+        
 
-        while(list.head !=null){
-            arrayList.add(list.head.data);
-            list.head = list.head.next;
-        }
+        // System.out.println("Middle element is :"+ new LinkedList().middleElementOfList(list));
+        printList(new LinkedList().reverseLinkedList(list));
 
-        System.out.println("Middle element is :"+ arrayList.get(arrayList.size()/2));
     }
 }
