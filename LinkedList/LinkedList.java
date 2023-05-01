@@ -83,6 +83,30 @@ public class LinkedList {
         return newList;
     }
 
+    public LinkedList rotateList(LinkedList list,int rotation){
+        LinkedList newList = new LinkedList();
+        if(list.head==null){
+            return null;
+        }
+        else{
+            ArrayList <Integer> arrayList = new ArrayList<>();
+            while(list.head!=null){
+                arrayList.add(list.head.data);
+                list.head = list.head.next;
+            }
+
+            for(int i = rotation; i<arrayList.size(); i++){
+                newList = newList.insertData(newList, arrayList.get(i)); 
+            }
+
+            for(int i = 0; i<rotation; i++){
+                newList = newList.insertData(newList, arrayList.get(i)); 
+            }
+
+        }
+        return newList;
+    }
+
     public static void main(String[] args) {
         LinkedList list = new LinkedList(); 
     
@@ -105,7 +129,7 @@ public class LinkedList {
         
 
         // System.out.println("Middle element is :"+ new LinkedList().middleElementOfList(list));
-        printList(new LinkedList().reverseLinkedList(list));
+        printList(new LinkedList().rotateList(list, 3));
 
     }
 }
