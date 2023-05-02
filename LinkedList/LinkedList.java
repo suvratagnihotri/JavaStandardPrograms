@@ -107,6 +107,22 @@ public class LinkedList {
         return newList;
     }
 
+    public boolean detectLoop(Node head) {
+        Node slow = head;
+        Node fast = head;
+    
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+    
+            if (slow == fast) {
+                return true;
+            }
+        }
+    
+        return false;
+    }
+
     public static void main(String[] args) {
         LinkedList list = new LinkedList(); 
     
@@ -125,11 +141,12 @@ public class LinkedList {
         list = list.insertData(list, 8); 
     
         // Print the LinkedList 
-        printList(list);
+        // printList(list);
         
 
         // System.out.println("Middle element is :"+ new LinkedList().middleElementOfList(list));
-        printList(new LinkedList().rotateList(list, 3));
+        // printList(new LinkedList().rotateList(list, 3));
+        System.out.println(new LinkedList().detectLoop(list.head));
 
     }
 }
