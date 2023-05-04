@@ -139,6 +139,13 @@ public class LinkedList {
         list = list.insertData(list, 6); 
         list = list.insertData(list, 7); 
         list = list.insertData(list, 8); 
+        list = list.insertData(list, 8); 
+        list = list.insertData(list, 9); 
+        list = list.insertData(list, 10); 
+        list = list.insertData(list, 23); 
+        list = list.insertData(list, 24); 
+
+
     
         // Print the LinkedList 
         // printList(list);
