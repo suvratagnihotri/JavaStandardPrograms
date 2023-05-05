@@ -33,9 +33,9 @@ public class LinkedList {
         return list;
     }
 
-    public static void printList(LinkedList list) 
+    public static void printList(LinkedList.Node list) 
     { 
-        Node currNode = list.head; 
+        Node currNode = list; 
      
         System.out.print("LinkedList: "); 
      
@@ -122,6 +122,38 @@ public class LinkedList {
     
         return false;
     }
+    public LinkedList.Node removeLoop(Node head) {
+        if (head == null || head.next == null) {
+            return null;
+        }
+        Node slow = head;
+        Node fast = head;
+        boolean hasLoop = false;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) {
+                hasLoop = true;
+                break;
+            }
+        }
+        if (hasLoop) {
+            slow = head;
+            while (slow != fast) {
+                slow = slow.next;
+                fast = fast.next;
+            }
+            // At this point, slow and fast are both at the start of the loop
+            // We can now move the fast pointer to the last node in the loop
+            while (fast.next != slow) {
+                fast = fast.next;
+            }
+            // Set the next node of the last node in the loop to null
+            fast.next = null;
+        }
+        return slow;
+    }
+    
 
     public static void main(String[] args) {
         LinkedList list = new LinkedList(); 
@@ -152,8 +184,8 @@ public class LinkedList {
         
 
         // System.out.println("Middle element is :"+ new LinkedList().middleElementOfList(list));
-        // printList(new LinkedList().rotateList(list, 3));
-        System.out.println(new LinkedList().detectLoop(list.head));
+        printList(new LinkedList().removeLoop(list.head));
+        System.out.println(new LinkedList().removeLoop(list.head));
 
     }
 }
