@@ -153,6 +153,25 @@ public class LinkedList {
         }
         return slow;
     }
+    public void printNthFromEnd(int n, Node head) {
+        Node p1 = head;
+        Node p2 = head;
+        
+        for(int i=0; i<n; i++) {
+            if(p1 == null) {
+                System.out.println("List is shorter than " + n + " nodes");
+                return;
+            }
+            p1 = p1.next;
+        }
+        
+        while(p1 != null) {
+            p1 = p1.next;
+            p2 = p2.next;
+        }
+        
+        System.out.println("Nth node from end is: " + p2.data);
+    }
     
 
     public static void main(String[] args) {
@@ -184,8 +203,8 @@ public class LinkedList {
         
 
         // System.out.println("Middle element is :"+ new LinkedList().middleElementOfList(list));
-        printList(new LinkedList().removeLoop(list.head));
-        System.out.println(new LinkedList().removeLoop(list.head));
+        // printList(new LinkedList().removeLoop(list.head));
+        new LinkedList().printNthFromEnd(4,list.head);
 
     }
 }
