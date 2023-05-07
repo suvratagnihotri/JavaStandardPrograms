@@ -33,7 +33,7 @@ public class LinkedList {
         return list;
     }
 
-    public static void printList(LinkedList.Node list) 
+    public static void printList(Node list) 
     { 
         Node currNode = list; 
      
