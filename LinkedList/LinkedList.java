@@ -172,6 +172,33 @@ public class LinkedList {
         
         System.out.println("Nth node from end is: " + p2.data);
     }
+
+    public int isPalindrome(Node head){
+        int number = 0;
+        int temp = 0;
+        int newNumber = 0;
+        if(head==null){
+            return 0;
+        }
+        else if(head.next==null){
+            return 1;
+        }
+        else{
+            while(head!=null){
+                number = number*10+head.data;
+                head = head.next;
+            }
+            temp = number;
+            while(number>0){
+                newNumber = newNumber*10 +number%10;
+                number = number/10;
+            }
+            if(newNumber == temp){
+                return 1;
+            }
+        }
+        return 0;
+    }
     
 
     public static void main(String[] args) {
@@ -184,17 +211,18 @@ public class LinkedList {
         // Insert the values 
         list = list.insertData(list, 1); 
         list = list.insertData(list, 2); 
-        list = list.insertData(list, 3); 
-        list = list.insertData(list, 4); 
-        list = list.insertData(list, 5); 
-        list = list.insertData(list, 6); 
-        list = list.insertData(list, 7); 
-        list = list.insertData(list, 8); 
-        list = list.insertData(list, 8); 
-        list = list.insertData(list, 9); 
-        list = list.insertData(list, 10); 
-        list = list.insertData(list, 23); 
-        list = list.insertData(list, 24); 
+        list = list.insertData(list, 1); 
+        // list = list.insertData(list, 3); 
+        // list = list.insertData(list, 4); 
+        // list = list.insertData(list, 5); 
+        // list = list.insertData(list, 6); 
+        // list = list.insertData(list, 7); 
+        // list = list.insertData(list, 8); 
+        // list = list.insertData(list, 8); 
+        // list = list.insertData(list, 9); 
+        // list = list.insertData(list, 10); 
+        // list = list.insertData(list, 23); 
+        // list = list.insertData(list, 24); 
 
 
     
@@ -204,7 +232,7 @@ public class LinkedList {
 
         // System.out.println("Middle element is :"+ new LinkedList().middleElementOfList(list));
         // printList(new LinkedList().removeLoop(list.head));
-        new LinkedList().printNthFromEnd(4,list.head);
+        System.out.println(new LinkedList().isPalindrome(list.head));
 
     }
 }
