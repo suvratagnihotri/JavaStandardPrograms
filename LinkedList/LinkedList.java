@@ -199,6 +199,24 @@ public class LinkedList {
         }
         return 0;
     }
+
+    public Node getIntersectionNode(Node head1, Node head2)
+    {
+        while (head2 != null) {
+            Node temp = head1;
+            while (temp != null) {
+                // if both Nodes are same
+                if (temp == head2) {
+                    return head2;
+                }
+                temp = temp.next;
+            }
+            head2 = head2.next;
+        }
+        // If intersection is not present between the lists,
+        // return NULL.
+        return null;
+    }
     
 
     public static void main(String[] args) {
@@ -224,7 +242,11 @@ public class LinkedList {
         // list = list.insertData(list, 23); 
         // list = list.insertData(list, 24); 
 
+        LinkedList list2 = new LinkedList();
 
+        list2 = list2.insertData(list2, 1); 
+        list2 = list2.insertData(list2, 2); 
+        list2 = list2.insertData(list2, 1); 
     
         // Print the LinkedList 
         // printList(list);
@@ -232,7 +254,15 @@ public class LinkedList {
 
         // System.out.println("Middle element is :"+ new LinkedList().middleElementOfList(list));
         // printList(new LinkedList().removeLoop(list.head));
-        System.out.println(new LinkedList().isPalindrome(list.head));
+        // System.out.println(new LinkedList().isPalindrome(list.head));
+        Node intersectionNode = new LinkedList().getIntersectionNode(list.head, list2.head);
+
+        if(intersectionNode==null){
+            System.out.println("No intersection node.");
+        }
+        else{
+            System.out.println("Intersection Node found");
+        }
 
     }
 }
