@@ -10,7 +10,7 @@ public class Queue<T> {
         private T data;
         private Node<T> next;
         
-        public Node(T data) {
+        public Node() {
             this.data = data;
             this.next = null;
         }
@@ -55,7 +55,7 @@ public class Queue<T> {
     }
 
     public static void main(String[] args) {
-        //
+        Node <Integer> node = new Node();
     }
 }
 
