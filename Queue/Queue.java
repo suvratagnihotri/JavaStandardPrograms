@@ -10,7 +10,7 @@ public class Queue<T> {
         private T data;
         private Node<T> next;
         
-        public Node() {
+        public Node(T data) {
             this.data = data;
             this.next = null;
         }
@@ -54,8 +54,25 @@ public class Queue<T> {
         return front.data;
     }
 
+    public void printQueue(Queue<T> queue){
+        while(queue.isEmpty()==false){
+            System.out.println(queue.peek());
+            queue.dequeue();
+        }
+    }
+
     public static void main(String[] args) {
-        Node <Integer> node = new Node();
+        Queue<Integer> queue = new Queue<>();
+        queue.enqueue(6);
+        queue.enqueue(7);
+        queue.enqueue(8);
+        queue.enqueue(9);
+        queue.enqueue(611);
+        queue.enqueue(621);
+        queue.enqueue(634);
+
+        queue.printQueue(queue);
+
     }
 }
 
