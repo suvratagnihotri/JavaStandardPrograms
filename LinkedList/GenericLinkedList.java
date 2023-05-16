@@ -32,15 +32,30 @@ public class GenericLinkedList<T> {
         }
     }
 
-    public static void main(String[] args) {
-        GenericLinkedList<String> genericLinkedList = new GenericLinkedList<>();
+    public Node insertData(Node<T> head, T data){
+        Node<T> tempNode = new Node<>(data);
+        if(head == null){
+            throw new RuntimeException("Linked list ins empty.");
+        }
+        else if(head.next == null){
+            head.next = tempNode;
+            return head;
+        }
+        else{
+            Node<T> temp = head;
+            while(temp.next!=null){
+                temp = temp.next;
+            }
+            temp.next = tempNode;
+        }
+        return head;
+    }
 
-        Node<String> node = genericLinkedList.node = new Node<String>("Value_1");
-        node.next = new Node<String>("Value_2");
-        node.next.next = new Node<String>("Value_3");
-        node.next.next.next = new Node<String>("Value_4");
-        node.next.next.next.next = new Node<String>("Value_5");
-        node.next.next.next.next.next = new Node<String>("Value_6");
-        genericLinkedList.printLinkedList(node);
+    public static void main(String[] args) {
+        GenericLinkedList<Integer> genericLinkedList = new GenericLinkedList<>();
+
+        Node<Integer> node = genericLinkedList.node = new Node<Integer>(1);
+
+
     }
 }
