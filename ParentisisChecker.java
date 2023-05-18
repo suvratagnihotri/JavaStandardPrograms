@@ -35,6 +35,6 @@ public class ParentisisChecker {
     }
 
     public static void main(String[] args) {
-        System.out.println(new ParentisisChecker().isBalanced("({({[]})})"));
+        System.out.println(new ParentisisChecker().isBalanced("{{{{{)))))}}}}}"));
     }
 }
