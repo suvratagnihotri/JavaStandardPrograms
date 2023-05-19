@@ -67,6 +67,10 @@ public class Stack<T> {
         }
     }
 
+    public int getStackSize(){
+        return this.size;
+    }
+
     public static void main(String[] args) {
         Stack<String> stack = new Stack<>();
 
@@ -89,6 +93,8 @@ public class Stack<T> {
         System.out.println(stack.peek());
         System.out.println("=============================");
         stack.printStack();
+
+        System.out.println("Stack size is : "+stack.getStackSize());
 
 
 
