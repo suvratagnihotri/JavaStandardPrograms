@@ -84,6 +84,12 @@ public class Stack<T> {
         stack.push("ashish");
         stack.push("ramdev");
         stack.push("modi");
+        stack.push("mummy");
+        stack.push("kushik");
+        stack.push("aman");
+        stack.push("ashish");
+        stack.push("ramdev");
+        stack.push("modi");
 
         System.out.println(stack.peek());
         System.out.println(stack.isEmpty());
