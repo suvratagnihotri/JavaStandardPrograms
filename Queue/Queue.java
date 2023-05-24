@@ -79,6 +79,10 @@ public class Queue<T> {
         queue.enqueue(7);
         queue.enqueue(8);
         queue.enqueue(9);
+        queue.enqueue(9);
+        queue.enqueue(7);
+        queue.enqueue(8);
+        queue.enqueue(9);
 
         queue.printQueue(queue);
 
